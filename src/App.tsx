@@ -1,10 +1,15 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import DemoPage from './pages/DemoPage';
+import HomePage from './pages/HomePage';
+
 function App() {
   return (
-    <main>
-      <h1>前端性能优化</h1>
-      <p>项目已初始化，等待页面开发。</p>
-    </main>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/step/:index" element={<DemoPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

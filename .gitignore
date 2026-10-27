@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Generated demo assets (run `npm run images`)
+public/images/generated
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

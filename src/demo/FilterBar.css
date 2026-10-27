@@ -1,0 +1,55 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0 16px;
+}
+
+.filter-bar__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-bar__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-bar__count {
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip {
+  appearance: none;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-secondary);
+  font-size: 12.5px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.chip.is-active {
+  border-color: rgba(42, 120, 214, 0.4);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 600;
+}

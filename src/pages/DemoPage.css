@@ -1,0 +1,131 @@
+.demo-page {
+  min-height: 100vh;
+}
+
+.demo-page__main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.demo-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 0 18px;
+}
+
+.demo-header__text {
+  min-width: 0;
+}
+
+.demo-header h1 {
+  margin-top: 6px;
+  color: var(--ink);
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.demo-header__summary {
+  max-width: 720px;
+  margin-top: 8px;
+  color: var(--ink-secondary);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.flag-list {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 11.5px;
+}
+
+.flag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.flag.is-on {
+  border-color: rgba(42, 120, 214, 0.35);
+  background: var(--accent-soft);
+  color: var(--ink-secondary);
+}
+
+.flag.is-on .flag__dot {
+  background: var(--accent);
+}
+
+.flag__state {
+  color: var(--ink-muted);
+}
+
+.flag.is-on .flag__state {
+  color: var(--accent-strong);
+}
+
+.demo-details {
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink-secondary);
+  font-size: 13px;
+}
+
+.demo-details summary {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-details p {
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+.demo-page__hint {
+  max-width: 760px;
+  margin: 8px auto 0;
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .demo-page__main {
+    padding: 20px 16px 40px;
+  }
+
+  .demo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .demo-header h1 {
+    font-size: 24px;
+  }
+}

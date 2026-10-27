@@ -1,0 +1,124 @@
+.masonry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.masonry__column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.feed-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.feed-card__media {
+  position: relative;
+  overflow: hidden;
+  background: #e7e5e1;
+}
+
+.feed-card__media--auto {
+  background: transparent;
+}
+
+.feed-card__media img {
+  display: block;
+  width: 100%;
+}
+
+.feed-card__media--auto img {
+  height: auto;
+}
+
+.feed-card__media:not(.feed-card__media--auto) picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.feed-card__media:not(.feed-card__media--auto) img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.feed-card__media.is-loaded img {
+  opacity: 1;
+}
+
+.feed-card__media:not(.feed-card__media--auto)::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #e7e5e1 20%, #f3f2ee 40%, #e7e5e1 60%);
+  background-size: 200% 100%;
+  content: '';
+  animation: feed-shimmer 1.4s linear infinite;
+}
+
+.feed-card__media.is-loaded::after {
+  content: none;
+}
+
+.feed-card__body {
+  padding: 10px 13px 13px;
+}
+
+.feed-card__title {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.feed-card__meta {
+  margin-top: 2px;
+  color: var(--ink-muted);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.masonry-empty {
+  padding: 80px 0;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+@keyframes feed-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .masonry {
+    gap: 12px;
+  }
+
+  .masonry__column {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feed-card__media:not(.feed-card__media--auto)::after {
+    animation: none;
+  }
+
+  .feed-card__media:not(.feed-card__media--auto) img {
+    transition: none;
+  }
+}
