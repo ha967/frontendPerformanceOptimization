@@ -1,7 +1,14 @@
+import { useEffect, useRef } from 'react';
 import { STEPS } from '../demo/steps';
 import './StepNav.css';
 
 export function StepNav({ current }: { current: number }) {
+  const activeRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }, [current]);
+
   return (
     <nav className="step-nav" aria-label="优化步骤">
       <div className="step-nav__inner">
@@ -26,6 +33,7 @@ export function StepNav({ current }: { current: number }) {
             return (
               <li key={step.index}>
                 <a
+                  ref={active ? activeRef : undefined}
                   className={active ? 'step-nav__link is-active' : 'step-nav__link'}
                   href={`/step/${step.index}`}
                   aria-current={active ? 'page' : undefined}
@@ -37,6 +45,9 @@ export function StepNav({ current }: { current: number }) {
             );
           })}
         </ol>
+        <a className="step-nav__link step-nav__results" href="/results">
+          跑分结果
+        </a>
       </div>
     </nav>
   );

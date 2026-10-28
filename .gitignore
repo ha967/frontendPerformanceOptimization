@@ -15,6 +15,9 @@ dist-ssr
 # Generated demo assets (run `npm run images`)
 public/images/generated
 
+# Generated benchmark results (run `npm run benchmark`)
+public/benchmarks
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

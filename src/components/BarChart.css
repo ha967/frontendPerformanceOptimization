@@ -1,0 +1,130 @@
+.bar-chart {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.bar-chart__caption h2 {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bar-chart__caption p {
+  margin-top: 2px;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.bar-chart__plot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 0 8px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.bar-chart__column {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  outline: none;
+}
+
+.bar-chart__column:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.bar-chart__bar {
+  display: block;
+  width: 24px;
+  max-width: 72%;
+  border-radius: 4px 4px 0 0;
+  background: var(--accent);
+}
+
+.bar-chart__value {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ink);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bar-chart__threshold {
+  position: absolute;
+  right: 0;
+  left: 0;
+  border-top: 1px solid var(--line-strong);
+  pointer-events: none;
+}
+
+.bar-chart__labels {
+  display: flex;
+  gap: 10px;
+  padding: 8px 8px 0;
+}
+
+.bar-chart__label {
+  flex: 1 1 0;
+  color: var(--ink-muted);
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.bar-chart__detail {
+  min-height: 1.5em;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 11.5px;
+}
+
+.bar-chart__detail.is-active {
+  color: var(--ink-secondary);
+}
+
+.bar-chart__detail strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.bar-chart__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  color: var(--ink-secondary);
+}
+
+.bar-chart__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-unknown);
+}
+
+.bar-chart__status.is-good .bar-chart__dot {
+  background: var(--status-good);
+}
+
+.bar-chart__status.is-warn .bar-chart__dot {
+  background: var(--status-warning);
+}
+
+.bar-chart__status.is-poor .bar-chart__dot {
+  background: var(--status-critical);
+}

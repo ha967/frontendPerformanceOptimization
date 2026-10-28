@@ -10,6 +10,11 @@
   --accent: #2a78d6;
   --accent-strong: #1c5cab;
   --accent-soft: rgba(42, 120, 214, 0.1);
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-critical: #d03b3b;
+  --status-unknown: #898781;
+  --success-text: #006300;
 
   color-scheme: light;
   font-family:

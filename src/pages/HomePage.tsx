@@ -5,16 +5,21 @@ export default function HomePage() {
   return (
     <div className="home">
       <header className="home__hero">
-        <p className="eyebrow">Performance Lab · Phase 1</p>
+        <p className="eyebrow">Performance Lab · Phase 1–2</p>
         <h1>把性能优化，变成能看见的步骤</h1>
         <p className="home__lead">
           同一个瀑布流页面，从“全量高清图”开始，逐层叠加懒加载、固定宽高比、响应式图片。
           右下角的实时 HUD 会记录每一步的 Core Web Vitals、图片传输、长任务与滚动 FPS，
           让改进幅度有据可查。
         </p>
-        <a className="home__cta" href="/step/0">
-          从基线开始 →
-        </a>
+        <div className="home__actions">
+          <a className="home__cta" href="/step/0">
+            从基线开始 →
+          </a>
+          <a className="home__secondary" href="/results">
+            查看自动跑分结果
+          </a>
+        </div>
       </header>
 
       <section className="home__section" aria-labelledby="steps-title">
@@ -54,10 +59,16 @@ export default function HomePage() {
           稳定复现，演示图片统一在首帧绘制后约 300ms 再写入 <code>src</code>
           ；所有步骤的挂载时机一致，差异只来自图片本身。
         </p>
+        <p>
+          想得到可复现的自动对比，先运行 <code>npm run benchmark</code>，再打开{' '}
+          <a href="/results">跑分结果页</a>。脚本会构建生产产物、自动启动 preview，并在 Slow 4G + 4x
+          CPU 下按步骤测量。
+        </p>
       </section>
 
       <p className="home__footnote">
-        Phase 1 聚焦图片加载。后续阶段会加入虚拟化、渲染优化、代码分割与自动跑分对比。
+        Phase 1 聚焦图片加载，Phase 2 补齐自动跑分与对比页。Phase 3
+        将加入虚拟化、渲染优化与代码分割。
       </p>
     </div>
   );

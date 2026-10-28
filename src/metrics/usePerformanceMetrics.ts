@@ -196,12 +196,15 @@ export function usePerformanceMetrics(): PerformanceSnapshot {
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     const updateSnapshot = () => {
-      setSnapshot({
+      const next: PerformanceSnapshot = {
         ...metrics,
         domNodes: document.getElementsByTagName('*').length,
         imageElements: document.images.length,
         cardCommits: getRenderStats().cardCommits,
-      });
+      };
+      setSnapshot(next);
+      // Phase 2 自动跑分通过 window.__perf 读取结构化指标。
+      (window as Window & { __perf?: PerformanceSnapshot }).__perf = next;
     };
     updateSnapshot();
     const intervalId = window.setInterval(updateSnapshot, 500);

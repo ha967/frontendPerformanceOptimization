@@ -89,6 +89,13 @@
   color: var(--accent-strong);
 }
 
+.step-nav__results {
+  flex: none;
+  margin-left: auto;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
 @media (max-width: 640px) {
   .step-nav__inner {
     gap: 12px;
